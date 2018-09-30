@@ -1,7 +1,7 @@
 '''
 
 
-Examples using the LOLAPI Python wrapper.
+Examples using the LolApi Python wrapper.
 For more info about the API service, consult 
 https://developer.riotgames.com/getting-started.html.
 
@@ -11,27 +11,16 @@ NB: It only supports the 'NA' region at this time.
 '''
 
 
-from LOLAPI import LOLAPI
+from LolApi import LolApi
 import json
-
-# Display some documentation about each functions.
-print('LOLAPI(apikey=, region=\'NA\')')
-print(LOLAPI.__init__.__doc__)
-print('')
-print('get_summonerbyname(summonername=)')
-print(LOLAPI.get_summonerbyname.__doc__)
-print('')
-print('get_currentmatch(summonerid=)')
-print(LOLAPI.get_currentmatch.__doc__)
-print('')
-print('get_recentmatches(accountid=)')
-print(LOLAPI.get_recentmatches.__doc__)
-
 
 
 # Configure your API key here and initialize the class.
 api = LOLAPI('Your developper API key')
 summonerName = 'ASummonerName'
+
+# Display some documentation about each functions.
+api.showhelp()
 
 # Get the summoner information.
 status_code, text = api.get_summonerbyname(summonerName)
@@ -79,3 +68,5 @@ else:
     # Something went wrong, is this summoner valid or perhaps never played yet.
     print('Couldn\'t retrive recent matches for this summoner.')
 
+ # Display the LolApi stats for our usage
+ print(api.get_apistats())
