@@ -40,8 +40,7 @@ class LolApi():
         region will default to NA if not specified.
             For a list of valid values, consult 
             https://developer.riotgames.com/regional-endpoints.html.
-        '''
-        
+        '''        
         # Save our variables
         self.apikey = apikey
         self.region = region
@@ -69,9 +68,8 @@ class LolApi():
 
     def get_apistats(self):
         '''
-        Display stats related to this LoL API instance.
+        Return stats related to this LoL API instance.
         '''
-
         stats = {
             '_nextavailable_apicall':self._nextavailable_apicall,
             '_minutetimer':self._minutetimer,
@@ -88,7 +86,6 @@ class LolApi():
         Returns a configured URL string from the provided
             parameters values and base call URL.
         '''
-
         # List of parameters that can be used for the API calls.
         apiparameters = {'{accountId}' : accountid,
                          '{matchId}' : matchid,
@@ -153,7 +150,6 @@ class LolApi():
 
             Returns status_code, text (JSON).
         '''
-
         # Check if we are ready to make the next call        
         timer = time.perf_counter()        
         timerdelta = timer - self._nextavailable_apicall
