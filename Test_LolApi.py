@@ -30,7 +30,7 @@ if status_code == 200:
     print(json.dumps(summoner, indent=4))
     print('')
 else:
-    # Seomthing went wrong, is this summoner name valid?
+    # Something went wrong, is this summoner name valid?
     print('Couldn\'t retrieve this summoner\'s information. Please check the summoner name and retry (NA region only).')
     exit(-1)
 
